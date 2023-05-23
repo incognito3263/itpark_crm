@@ -1,0 +1,75 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Guruhlar</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Saytga oʻtish</a></li>
+                        <li class="breadcrumb-item active">Guruhlar</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Kurs nomi</label>
+                                    <br>
+                                    {{ form.courses }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Ustoz ismi</label>
+                                    <br>
+                                    {{ form.teacher }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Kaysi oydan keldi</label>
+                                    <br>
+                                    {{ form.month }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Uquvchi ismi</label>
+                                    <br>
+                                    {{ form.name }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Sana</label>
+                                    <br>
+                                    {{ form.surname }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Uquvchi Telefon raqami</label>
+                                    <br>
+                                    {{ form.number }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Kurs to'lovi</label>
+                                    <br>
+                                    {{ form.price }}
+                                </div>
+                                {#                  </div>#}
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Saqlash</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

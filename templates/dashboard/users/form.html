@@ -1,0 +1,91 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Userlar</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Saytga oʻtish</a></li>
+                        <li class="breadcrumb-item active">Userlar</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Kurs nomi</label>
+                                    <br>
+                                    {{ form.courses }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Ustozlar</label>
+                                    <br>
+                                    {{ form.teacher }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Guruhlar nomi</label>
+                                    <br>
+                                    {{ form.grup }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Ism</label>
+                                    <br>
+                                    {{ form.name }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Yoshi</label>
+                                    <br>
+                                    {{ form.age }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefon raqami</label>
+                                    <br>
+                                    {{ form.number }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Dadasi nomeri</label>
+                                    <br>
+                                    {{ form.dad_number }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Nima orqali kelgan</label>
+                                    <br>
+                                    {{ form.advertising }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Qayerda uqiydi</label>
+                                    <br>
+                                    {{ form.now }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Kursda</label>
+                                    <br>
+                                    {{ form.edu }}
+                                </div>
+
+                                {#                  </div>#}
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Saqlash</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
